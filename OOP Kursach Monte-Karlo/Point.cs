@@ -31,5 +31,11 @@ namespace OOP_Kursach_Monte_Karlo
             _x = newX;
             _y = newY;
         }
+
+        public Point(Point previousPoint)
+        {
+            _x = previousPoint._x;
+            _y = previousPoint._y;
+        }
     }
 }

@@ -12,7 +12,6 @@ namespace OOP_Kursach_Monte_Karlo
         private static Circle _centerCircle;
         private static double _k;
         private static double _b;
-        //private static double r_;
 
         private static int functionsIsCalculated = 0;
 
@@ -30,21 +29,15 @@ namespace OOP_Kursach_Monte_Karlo
                 return isLowerlinearFunction(newPoint.X, newPoint.Y);
             else
                 return isInsideCircle(newPoint.X, newPoint.Y);
+
+            functionsIsCalculated = 0;
         }
 
 
         public static void calculateLinearCoeffs(Point firstPoint, Point secondPoint)
         {
-            _b = (secondPoint.Y * firstPoint.X - secondPoint.X * firstPoint.Y) / (-secondPoint.X + 1);
-            if ((firstPoint.X != 0 && firstPoint.Y != 0) || (firstPoint.X != 0))
-                _k = (firstPoint.Y - _b) / firstPoint.X;
-            else
-            {
-                if (firstPoint.Y != 0)
-                    _k = (firstPoint.Y - _b);
-                else
-                    _k = 1;
-            }
+            _k = (secondPoint.Y - firstPoint.Y) / (secondPoint.X - firstPoint.X);
+            _b = firstPoint.Y - _k * firstPoint.X;
 
             functionsIsCalculated++;
         }
@@ -66,7 +59,7 @@ namespace OOP_Kursach_Monte_Karlo
 
         private static bool isInsideCircle(double x, double y)
         {
-            return ((Math.Sqrt(x * x + y * y) - _centerCircle.X) < _centerCircle.Radius) ? true : false;
+            return ((Math.Sqrt((x - _centerCircle.X) * (x - _centerCircle.X) + y * y)) <= _centerCircle.Radius) ? true : false;
         }
 
 

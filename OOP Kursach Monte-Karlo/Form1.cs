@@ -47,12 +47,7 @@ namespace OOP_Kursach_Monte_Karlo
             temp = aPoint_textBox.Text.Split(new char[] { ' ', ',' });
             _aPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
 
-            calculateLineBoundaries();
-            
-            calculateSquare();
-
-            BorderFunctions.calculateCircle(_ePoint, _dPoint);
-            BorderFunctions.calculateLinearCoeffs(_aPoint, _ePoint);
+            BorderFigure figure = new BorderFigure(_dPoint, _ePoint, _aPoint);
 
             int insidePointCounter;
             double randomX;
@@ -62,41 +57,25 @@ namespace OOP_Kursach_Monte_Karlo
                 insidePointCounter = 0;
                 for (uint j = 0; j < Math.Pow(10, 3 + i); j++)
                 {
-                    //randomX = randomRange(_minX, _maxX);
-                    //randomY = randomRange(_minY, _maxY);
+                    randomX = figure.MinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (figure.MaxX - figure.MinX);
+                    randomY = figure.MinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (figure.MaxY - figure.MinY);
 
-                    randomX = _minX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_maxX - _minX);//minX_ * number.Next (ToInt32 ( minX_ ), ToInt32(maxX_));
-                    randomY = _minY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_maxY - _minY);//number.Next (ToInt32 ( minY_ ), ToInt32(maxY_));
-
-                    if (BorderFunctions.isInside(new Point(randomX, randomY)) == true)
+                    if (figure.isInside(new Point(randomX, randomY)) == true)
                     {
                         insidePointCounter++;
                     }
 
                 }
-                dataGridView.Rows.Add( "10^" + (3 + i), _rectangleSquare * insidePointCounter / Math.Pow(10, 3 + i));
+                dataGridView.Rows.Add( "10^" + (3 + i), figure.RectangleSquare * insidePointCounter / Math.Pow(10, 3 + i));
             }
 
-            dataGridView.Rows.Add("Actual Square", BorderFunctions.calculateActualSquare(_aPoint));
+            dataGridView.Rows.Add("Actual Square", figure.actualSquare());
         }
 
-        private void calculateLineBoundaries()
-        {
-            _minX = _aPoint.X;
-            _minY = _aPoint.Y;
-
-            _maxX = _dPoint.X;
-            _maxY = _ePoint.Y;
-        }
 
         double randomRange(double min, double max)
         {
             return (random.Next() / (max - min)) + min;
-        }
-
-        private void calculateSquare()
-        {
-            _rectangleSquare = (_maxX - _minX) * (_maxY - _minY);
         }
     }
 }
