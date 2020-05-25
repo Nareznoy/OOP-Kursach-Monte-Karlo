@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Kursach_Monte_Karlo
 {
-    class BorderFigure
+    class Procedural
     {
         private Point _dPoint;
         private Point _ePoint;
@@ -28,16 +28,19 @@ namespace OOP_Kursach_Monte_Karlo
         private int functionsIsCalculated = 0;
 
 
-        public double MinX { get =>_minX; set => _minX = value; }
-        public double MinY { get =>_minY; set => _minY = value; }
-                                              
-        public double MaxX { get =>_maxX; set => _maxX = value; }
-        public double MaxY { get =>_maxY; set => _maxY = value; }
-
-        public double RectangleSquare { get => _rectangleSquare; set => _rectangleSquare = value; }
+        Random random = new Random();
 
 
-        public BorderFigure(Point _dPoint, Point _ePoint, Point _aPoint)
+        public double MinX { get { return _minX; } set { _minX = value; } }
+        public double MinY { get { return _minY; } set { _minY = value; } }
+
+        public double MaxX { get { return _maxX; } set { _maxX = value; } }
+        public double MaxY { get { return _maxY; } set { _maxY = value; } }
+
+        public double RectangleSquare { get { return _rectangleSquare; } set { _rectangleSquare = value; } }
+
+
+        public List<double> calculate(Point _dPoint, Point _ePoint, Point _aPoint)
         {
             this._dPoint = new Point(_dPoint.X, _dPoint.Y);
             this._ePoint = new Point(_ePoint.X, _ePoint.Y);
@@ -53,7 +56,50 @@ namespace OOP_Kursach_Monte_Karlo
             calculateCircle();
 
             calculateRectangleSquare();
+
+            List<double> squares = new List<double>();
+
+            int insidePointCounter;
+            double randomX;
+            double randomY;
+            for (uint i = 0; i < 5; i++)
+            {
+                insidePointCounter = 0;
+                for (uint j = 0; j < Math.Pow(10, 3 + i); j++)
+                {
+                    randomX = MinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (MaxX - MinX);
+                    randomY = MinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (MaxY - MinY);
+
+                    if (isInside(new Point(randomX, randomY)) == true)
+                    {
+                        insidePointCounter++;
+                    }
+                     
+                }
+                squares.Add(RectangleSquare * insidePointCounter / Math.Pow(10, 3 + i));
+            }
+
+            return squares;
         }
+
+
+        //public void setFigure(Point _dPoint, Point _ePoint, Point _aPoint)
+        //{
+        //    this._dPoint = new Point(_dPoint.X, _dPoint.Y);
+        //    this._ePoint = new Point(_ePoint.X, _ePoint.Y);
+        //    this._aPoint = new Point(_aPoint.X, _aPoint.Y);
+
+        //    _minX = this._aPoint.X;
+        //    _minY = this._aPoint.Y;
+
+        //    _maxX = this._dPoint.X;
+        //    _maxY = this._ePoint.Y;
+
+        //    calculateLinearCoeffs();
+        //    calculateCircle();
+
+        //    calculateRectangleSquare();
+        //}
 
 
         public void calculateLinearCoeffs()
@@ -113,6 +159,6 @@ namespace OOP_Kursach_Monte_Karlo
         public void calculateRectangleSquare()
         {
             _rectangleSquare = (_maxX - _minX) * (_maxY - _minY);
-        }
+        }   
     }
 }

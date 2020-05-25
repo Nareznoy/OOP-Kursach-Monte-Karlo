@@ -16,14 +16,6 @@ namespace OOP_Kursach_Monte_Karlo
         private Point _ePoint;
         private Point _aPoint;
 
-        private double _minX;
-        private double _minY;
-
-        private double _maxX;
-        private double _maxY;
-
-        private double _rectangleSquare;
-
         Random random = new Random();
 
         public Form1()
@@ -47,6 +39,13 @@ namespace OOP_Kursach_Monte_Karlo
             temp = aPoint_textBox.Text.Split(new char[] { ' ', ',' });
             _aPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
 
+            calculateUsingOOP();
+            calcualteUsingProcedural();
+        }
+
+
+        private void calculateUsingOOP()
+        {
             BorderFigure figure = new BorderFigure(_dPoint, _ePoint, _aPoint);
 
             int insidePointCounter;
@@ -66,16 +65,23 @@ namespace OOP_Kursach_Monte_Karlo
                     }
 
                 }
-                dataGridView.Rows.Add( "10^" + (3 + i), figure.RectangleSquare * insidePointCounter / Math.Pow(10, 3 + i));
+                dataGridView.Rows.Add("10^" + (3 + i), figure.RectangleSquare * insidePointCounter / Math.Pow(10, 3 + i));
             }
 
             dataGridView.Rows.Add("Actual Square", figure.actualSquare());
         }
 
-
-        double randomRange(double min, double max)
+        private void calcualteUsingProcedural()
         {
-            return (random.Next() / (max - min)) + min;
+            Procedural temp = new Procedural();
+            List<double> squares = temp.calculate(_dPoint, _ePoint, _aPoint);
+
+            for (int i = 0; i < squares.Count; i++)
+            {
+                dataGridView1.Rows.Add("10^" + (3 + i), squares[i]);
+            }
+
+            dataGridView1.Rows.Add("Actual Square", temp.actualSquare());
         }
     }
 }
