@@ -8,11 +8,11 @@ namespace OOP_Kursach_Monte_Karlo
 {
     class LinearFunction : BorderFunctions
     {
-        Point _firstPoint;
-        Point _secondPoint;
+        private readonly Point _firstPoint;
+        private readonly Point _secondPoint;
 
-        private double _k;
-        private double _b;
+        private readonly double _k;
+        private readonly double _b;
 
         public LinearFunction(Point firstPoint, Point secondPoint)
         {
