@@ -9,7 +9,7 @@ namespace OOP_Kursach_Monte_Karlo
     class Circle : BorderFunctions
     {
         public Point CenterPoint { get; }
-        public double Radius { get; set; }
+        public double Radius { get; }
 
 
         public Circle(Point center, double newRadius)

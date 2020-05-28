@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOP_Kursach_Monte_Karlo
 {
-    public class Point : BorderFunctions
+    public class Point
     {
-        protected double _x;
-        protected double _y ;
+        private double _x;
+        private double _y ;
 
 
         public double X
@@ -36,16 +36,6 @@ namespace OOP_Kursach_Monte_Karlo
         {
             _x = previousPoint._x;
             _y = previousPoint._y;
-        }
-
-        public override bool IsInside(double x, double y)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override double Square()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -17,29 +17,17 @@ namespace OOP_Kursach_Monte_Karlo
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            Point dPoint;
-            Point ePoint;
-            Point aPoint;
+            Point dPoint, ePoint, aPoint;
 
-            string[] temp = dPoint_textBox.Text.Split(new char[] { ' ', ',' });
-            dPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
-
-            temp = ePoint_textBox.Text.Split(new char[] { ' ', ',' });
-            ePoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
-
-            temp = aPoint_textBox.Text.Split(new char[] { ' ', ',' });
-            aPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
-
+            if (!initializePoints(out dPoint, out ePoint, out aPoint))
+            {
+                return;
+            }
 
             BorderFigure figure = new BorderFigure(dPoint, ePoint, aPoint);
-
             MonteCarlo monteCarlo = new MonteCarlo(figure);
 
             for (uint i = 0; i < 5; i++)
@@ -48,6 +36,52 @@ namespace OOP_Kursach_Monte_Karlo
             }
 
             dataGridView.Rows.Add("Actual Square", figure.actualSquare());
+        }
+
+
+        private bool initializePoints(out Point dPoint, out Point ePoint, out Point aPoint)
+        {
+            bool ifValidValues = true;
+            string[] temp;
+
+
+            try
+            {
+                temp = dPoint_textBox.Text.Split(new char[] { ' ', ',' });
+                dPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
+            }
+            catch
+            {
+                dPoint = null;
+                MessageBox.Show("Incorrect point d");
+                ifValidValues = false;
+            }
+
+            try
+            {
+                temp = ePoint_textBox.Text.Split(new char[] { ' ', ',' });
+                ePoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
+            }
+            catch
+            {
+                ePoint = null;
+                MessageBox.Show("Incorrect point e");
+                ifValidValues = false;
+            }
+
+            try
+            {
+                temp = aPoint_textBox.Text.Split(new char[] { ' ', ',' });
+                aPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
+            }
+            catch
+            {
+                aPoint = null;
+                MessageBox.Show("Incorrect point a");
+                ifValidValues = false;
+            }
+
+            return ifValidValues;
         }
     }
 }
