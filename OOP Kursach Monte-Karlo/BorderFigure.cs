@@ -31,13 +31,13 @@ namespace OOP_Kursach_Monte_Karlo
         //private int functionsIsCalculated = 0;
 
 
-        public double MinX { get { return _minX; } set { _minX = value; } }
-        public double MinY { get { return _minY; } set { _minY = value; } }
+        public double MinX { get =>_minX; set => _minX = value; }
+        public double MinY { get =>_minY; set => _minY = value; }
+                                              
+        public double MaxX { get =>_maxX; set => _maxX = value; }
+        public double MaxY { get =>_maxY; set => _maxY = value; }
 
-        public double MaxX { get { return _maxX; } set { _maxX = value; } }
-        public double MaxY { get { return _maxY; } set { _maxY = value; } }
-
-        public double RectangleSquare { get { return _rectangleSquare; } set { _rectangleSquare = value; } }
+        public double RectangleSquare { get => _rectangleSquare; set => _rectangleSquare = value; }
 
 
         public BorderFigure(Point dPoint, Point ePoint, Point aPoint)
