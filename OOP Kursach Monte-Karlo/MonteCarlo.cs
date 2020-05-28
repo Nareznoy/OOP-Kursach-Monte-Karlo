@@ -25,23 +25,6 @@ namespace OOP_Kursach_Monte_Karlo
 
             Random random = new Random();
 
-            //for (uint i = 0; i < 5; i++)
-            //{
-            //    insidePointCounter = 0;
-            //    for (uint j = 0; j < Math.Pow(10, 3 + i); j++)
-            //    {
-            //        randomX = _mainFigure.MinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.MaxX - _mainFigure.MinX);
-            //        randomY = _mainFigure.MinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.MaxY - _mainFigure.MinY);
-
-            //        if (_mainFigure.isInside(new Point(randomX, randomY)) == true)
-            //        {
-            //            insidePointCounter++;
-            //        }
-
-            //    }
-            //    dataGridView.Rows.Add("10^" + (3 + i), _mainFigure.RectangleSquare * insidePointCounter / Math.Pow(10, 3 + i));
-            //}
-
             insidePointCounter = 0;
             for (uint j = 0; j < numberOfPoints; j++)
             {
@@ -52,7 +35,6 @@ namespace OOP_Kursach_Monte_Karlo
                 {
                     insidePointCounter++;
                 }
-
             }
 
             return _mainFigure.RectangleSquare * insidePointCounter / numberOfPoints;

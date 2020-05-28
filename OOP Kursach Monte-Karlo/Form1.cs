@@ -12,8 +12,6 @@ namespace OOP_Kursach_Monte_Karlo
 {
     public partial class Form1 : Form
     {
-        Random random = new Random();
-
         public Form1()
         {
             InitializeComponent();

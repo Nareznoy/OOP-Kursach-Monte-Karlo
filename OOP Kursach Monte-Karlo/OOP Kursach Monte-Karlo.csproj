@@ -58,7 +58,6 @@
     <Compile Include="LinearFunction.cs" />
     <Compile Include="MonteCarlo.cs" />
     <Compile Include="Point.cs" />
-    <Compile Include="Procedural.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

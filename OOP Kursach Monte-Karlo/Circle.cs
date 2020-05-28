@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 
 namespace OOP_Kursach_Monte_Karlo
 {
-    class Circle : Point
+    class Circle : BorderFunctions
     {
+        public Point CenterPoint { get; }
         public double Radius { get; set; }
 
 
-        public Circle(Point newCenter, double newRadius) : base(newCenter.X, newCenter.Y)
+        public Circle(Point center, double newRadius)
         {
+            CenterPoint = new Point(center);
             Radius = newRadius;
         }
 
+
         public override bool IsInside(double x, double y)
         {
-            return ((Math.Sqrt((x - _x) * (x - _x) + y * y)) <= Radius) ? true : false;
+            return ((Math.Sqrt((x - CenterPoint.X) * (x - CenterPoint.X) + y * y)) <= Radius) ? true : false;
         }
+
 
         public override double Square()
         {
