@@ -8,9 +8,12 @@ namespace OOP_Kursach_Monte_Karlo
 {
     class BorderFigure
     {
-        private Point _dPoint;
-        private Point _ePoint;
-        private Point _aPoint;
+        //private Point _dPoint;
+        //private Point _ePoint;
+        //private Point _aPoint;
+
+        LinearFunction _linearFunction;
+        Circle _circle;
 
         private double _minX;
         private double _minY;
@@ -21,11 +24,11 @@ namespace OOP_Kursach_Monte_Karlo
         private double _rectangleSquare;
 
 
-        private Circle _centerCircle;
-        private double _k;
-        private double _b;
+        //private Circle _centerCircle;
+        //private double _k;
+        //private double _b;
 
-        private int functionsIsCalculated = 0;
+        //private int functionsIsCalculated = 0;
 
 
         public double MinX { get { return _minX; } set { _minX = value; } }
@@ -37,76 +40,75 @@ namespace OOP_Kursach_Monte_Karlo
         public double RectangleSquare { get { return _rectangleSquare; } set { _rectangleSquare = value; } }
 
 
-        public BorderFigure(Point _dPoint, Point _ePoint, Point _aPoint)
+        public BorderFigure(Point dPoint, Point ePoint, Point aPoint)
         {
-            this._dPoint = new Point(_dPoint.X, _dPoint.Y);
-            this._ePoint = new Point(_ePoint.X, _ePoint.Y);
-            this._aPoint = new Point(_aPoint.X, _aPoint.Y);
+            //this._dPoint = new Point(dPoint.X, dPoint.Y);
+            //this._ePoint = new Point(ePoint.X, ePoint.Y);
+            //this._aPoint = new Point(aPoint.X, aPoint.Y);
 
-            _minX = this._aPoint.X;
-            _minY = this._aPoint.Y;
+            _minX = aPoint.X;
+            _minY = aPoint.Y;
 
-            _maxX = this._dPoint.X;
-            _maxY = this._ePoint.Y;
+            _maxX = dPoint.X;
+            _maxY = ePoint.Y;
 
-            calculateLinearCoeffs();
-            calculateCircle();
+            _linearFunction = new LinearFunction(aPoint, ePoint);
+            _circle = new Circle(new Point(ePoint.X, ePoint.Y - (ePoint.Y - dPoint.Y)), ePoint.Y - dPoint.Y);
 
             calculateRectangleSquare();
         }
 
 
-        public void calculateLinearCoeffs()
-        {
-            _k = (_ePoint.Y - _aPoint.Y) / (_ePoint.X - _aPoint.X);
-            _b = _aPoint.Y - _k * _aPoint.X;
+        //public void calculateLinearCoeffs()
+        //{
+        //    _k = (_ePoint.Y - _aPoint.Y) / (_ePoint.X - _aPoint.X);
+        //    _b = _aPoint.Y - _k * _aPoint.X;
 
-            functionsIsCalculated++;
-        }
+        //    functionsIsCalculated++;
+        //}
 
 
-        public void calculateCircle()
-        {
-            _centerCircle = new Circle(new Point(_ePoint.X, _ePoint.Y - (_ePoint.Y - _dPoint.Y)), _ePoint.Y - _dPoint.Y);
+        //public void calculateCircle()
+        //{
+        //    _centerCircle = new Circle(new Point(_ePoint.X, _ePoint.Y - (_ePoint.Y - _dPoint.Y)), _ePoint.Y - _dPoint.Y);
 
-            functionsIsCalculated++;
-        }
+        //    functionsIsCalculated++;
+        //}
 
 
         public bool isInside(Point newPoint)
         {
-            if (functionsIsCalculated != 2)
-            {
-                Console.WriteLine("stuff is not set!");
+            //if (functionsIsCalculated != 2)
+            //{
+            //    Console.WriteLine("stuff is not set!");
 
-                return false;
-            }
+            //    return false;
+            //}
 
-            if (newPoint.X < _centerCircle.X)
-                return isLowerlinearFunction(newPoint.X, newPoint.Y);
+            if (newPoint.X < _circle.X)
+                return _linearFunction.IsInside(newPoint.X, newPoint.Y);
             else
-                return isInsideCircle(newPoint.X, newPoint.Y);
-
-            functionsIsCalculated = 0;
+                return _circle.IsInside(newPoint.X, newPoint.Y);
         }
 
 
-        private bool isLowerlinearFunction(double x, double y)
-        {
-            return (y < (_k * x + _b)) ? true : false;
-        }
+        //private bool isLowerlinearFunction(double x, double y)
+        //{
+        //    return (y < (_k * x + _b)) ? true : false;
+        //}
 
 
-        private bool isInsideCircle(double x, double y)
-        {
-            return ((Math.Sqrt((x - _centerCircle.X) * (x - _centerCircle.X) + y * y)) <= _centerCircle.Radius) ? true : false;
-        }
+        //private bool isInsideCircle(double x, double y)
+        //{
+        //    return ((Math.Sqrt((x - _centerCircle.X) * (x - _centerCircle.X) + y * y)) <= _centerCircle.Radius) ? true : false;
+        //}
 
 
         public double actualSquare()
         {
-            return ((_centerCircle.X - _aPoint.X) * _centerCircle.Radius / 2) +
-                   (Math.PI * _centerCircle.Radius * _centerCircle.Radius / 4);
+            //return ((_circle.X - aPoint.X) * _centerCircle.Radius / 2) +
+            //       (Math.PI * _centerCircle.Radius * _centerCircle.Radius / 4);
+            return _circle.Square() + _linearFunction.Square();
         }
 
 
