@@ -30,12 +30,17 @@ namespace OOP_Kursach_Monte_Karlo
             BorderFigure figure = new BorderFigure(dPoint, ePoint, aPoint);
             MonteCarlo monteCarlo = new MonteCarlo(figure);
 
+            TimeSpan time;
+            double calculationError;
+            int pointsInside;
+
             for (uint i = 0; i < 5; i++)
             {
-                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.CalculateSquare((int)Math.Pow(10, 3 + i)));
+                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.CalculateSquare((int)Math.Pow(10, 3 + i), out pointsInside, out time, out calculationError), pointsInside, time, calculationError + " %");
             }
 
-            dataGridView.Rows.Add("Actual Square", figure.actualSquare());
+            dataGridView.Rows.Add();
+            dataGridView.Rows.Add("Площадь фигуры", figure.actualSquare());
         }
 
 
@@ -43,6 +48,8 @@ namespace OOP_Kursach_Monte_Karlo
         {
             bool ifValidValues = true;
             string[] temp;
+
+            string errorString = "";
 
 
             try
@@ -53,7 +60,7 @@ namespace OOP_Kursach_Monte_Karlo
             catch
             {
                 dPoint = null;
-                MessageBox.Show("Incorrect point d");
+                errorString += "Некорректное значение точки d;\n";
                 ifValidValues = false;
             }
 
@@ -65,7 +72,7 @@ namespace OOP_Kursach_Monte_Karlo
             catch
             {
                 ePoint = null;
-                MessageBox.Show("Incorrect point e");
+                errorString += "Некорректное значение точки e;\n";
                 ifValidValues = false;
             }
 
@@ -77,8 +84,37 @@ namespace OOP_Kursach_Monte_Karlo
             catch
             {
                 aPoint = null;
-                MessageBox.Show("Incorrect point a");
+                errorString += "Некорректное значение точки a;\n";
                 ifValidValues = false;
+            }
+
+            if (ifValidValues)
+            {
+                if (aPoint.Y != dPoint.Y)
+                {
+                    ifValidValues = false;
+                    errorString += "Точки a и d должны находится на одном уровне по y;\n";
+                }
+                if (aPoint.Y >= ePoint.Y)
+                {
+                    ifValidValues = false;
+                    errorString += "Точка a должна быть ниже точки e по оси y;\n";
+                }
+                if (aPoint.X >= ePoint.X)
+                {
+                    ifValidValues = false;
+                    errorString += "Точка a должна быть правее точки e по оси x;\n";
+                }
+                if ((ePoint.Y - aPoint.Y) != (dPoint.X - ePoint.X))
+                {
+                    ifValidValues = false;
+                    errorString += "Радиус окружност по оси y должен быть равен радиусу по оси x;\n";
+                }
+            }
+
+            if (!ifValidValues)
+            {
+                MessageBox.Show(errorString);
             }
 
             return ifValidValues;

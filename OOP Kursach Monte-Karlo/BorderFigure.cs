@@ -38,7 +38,7 @@ namespace OOP_Kursach_Monte_Karlo
 
         public bool isInside(Point newPoint)
         {
-            if (newPoint.X < _circle.CenterPoint.X)
+            if (newPoint.X < _linearFunction.SecondPoint.X)
                 return _linearFunction.IsInside(newPoint.X, newPoint.Y);
             else
                 return _circle.IsInside(newPoint.X, newPoint.Y);

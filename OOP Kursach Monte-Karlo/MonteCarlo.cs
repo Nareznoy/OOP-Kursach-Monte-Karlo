@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,11 +18,15 @@ namespace OOP_Kursach_Monte_Karlo
             _mainFigure = borderFigure;
         }
 
-        public double CalculateSquare(int numberOfPoints)
+        public double CalculateSquare(int numberOfPoints, out int insidePointsCounter, out TimeSpan time, out double calculationError)
         {
+            Stopwatch stopwatch = new Stopwatch();
             Random random = new Random();
 
-            var insidePointCounter = 0;
+            insidePointsCounter = 0;
+
+            stopwatch.Start();
+
             for (uint j = 0; j < numberOfPoints; j++)
             {
                 var randomX = _mainFigure.MinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.MaxX - _mainFigure.MinX);
@@ -29,11 +34,19 @@ namespace OOP_Kursach_Monte_Karlo
 
                 if (_mainFigure.isInside(new Point(randomX, randomY)) == true)
                 {
-                    insidePointCounter++;
+                    insidePointsCounter++;
                 }
             }
 
-            return _mainFigure.RectangleSquare * insidePointCounter / numberOfPoints;
+            double square = Math.Round((_mainFigure.RectangleSquare * insidePointsCounter / numberOfPoints), 3);
+
+            stopwatch.Stop();
+
+            calculationError = Math.Round((Math.Abs(square - _mainFigure.actualSquare()) / _mainFigure.actualSquare()) * 100, 2);
+
+            time = stopwatch.Elapsed;
+            
+            return square;
         }
     }
     

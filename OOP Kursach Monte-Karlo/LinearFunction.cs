@@ -8,16 +8,16 @@ namespace OOP_Kursach_Monte_Karlo
 {
     class LinearFunction : BorderFunctions
     {
-        private readonly Point _firstPoint;
-        private readonly Point _secondPoint;
+        public Point FirstPoint { get; }
+        public Point SecondPoint { get; }
 
         private readonly double _k;
         private readonly double _b;
 
         public LinearFunction(Point firstPoint, Point secondPoint)
         {
-            _firstPoint = firstPoint;
-            _secondPoint = secondPoint;
+            FirstPoint = firstPoint;
+            SecondPoint = secondPoint;
 
             _k = (secondPoint.Y - firstPoint.Y) / (secondPoint.X - firstPoint.X);
             _b = firstPoint.Y - _k * firstPoint.X;
@@ -30,7 +30,7 @@ namespace OOP_Kursach_Monte_Karlo
 
         public override double Square()
         {
-            return (_secondPoint.X - _firstPoint.X) * (_secondPoint.Y - _firstPoint.Y) / 2;
+            return (SecondPoint.X - FirstPoint.X) * (SecondPoint.Y - FirstPoint.Y) / 2;
         }
     }
 }

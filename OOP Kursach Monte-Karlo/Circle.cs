@@ -21,7 +21,7 @@ namespace OOP_Kursach_Monte_Karlo
 
         public override bool IsInside(double x, double y)
         {
-            return ((Math.Sqrt((x - CenterPoint.X) * (x - CenterPoint.X) + y * y)) <= Radius) ? true : false;
+            return (((x - CenterPoint.X) * (x - CenterPoint.X) + (y - CenterPoint.Y) * (y - CenterPoint.Y)) <= Radius * Radius) ? true : false;
         }
 
 
