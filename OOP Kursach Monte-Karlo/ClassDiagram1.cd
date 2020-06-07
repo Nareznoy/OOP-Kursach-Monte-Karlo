@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="OOP_Kursach_Monte_Karlo.BorderFigure" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAwAAAAAgAAQgAAAEAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>BorderFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.BorderFunctions" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>BorderFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.Circle" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAgAAAAAAA=</HashCode>
+      <FileName>Circle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.Form1" Collapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAQASAAAFAAAACAgAAiAQAAAAAAAQAgAQBAAiA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.LinearFunction" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAQAhAAAAAAA=</HashCode>
+      <FileName>LinearFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.MonteCarlo" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>MonteCarlo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.Point" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

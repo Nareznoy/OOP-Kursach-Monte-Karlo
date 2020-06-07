@@ -12,7 +12,7 @@ namespace OOP_Kursach_Monte_Karlo
             _mainFigure = borderFigure;
         }
 
-        public double CalculateSquare(int numberOfPoints, out int insidePointsCounter, out TimeSpan time, out double calculationError)
+        public double calculateSquareMC(int numberOfPoints, out int insidePointsCounter, out TimeSpan time, out double calculationError)
         {
             Stopwatch stopwatch = new Stopwatch();
             Random random = new Random();

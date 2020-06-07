@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="OOP_Kursach_Monte_Karlo.BorderFigure">
+    <Position X="7.75" Y="0.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAwAAAAAgAAQgAAAEAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>BorderFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.BorderFunctions">
+    <Position X="2.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>BorderFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.Circle">
+    <Position X="4.75" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAgAAAAAAA=</HashCode>
+      <FileName>Circle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.Form1">
+    <Position X="11.75" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAQASAAAFAAAACAgAAiAQAAAAAAAQAgAQBAAiA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.LinearFunction">
+    <Position X="0.5" Y="2.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAQAhAAAAAAA=</HashCode>
+      <FileName>LinearFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.MonteCarlo">
+    <Position X="16.75" Y="0.75" Width="7.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>MonteCarlo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Kursach_Monte_Karlo.Point">
+    <Position X="8.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

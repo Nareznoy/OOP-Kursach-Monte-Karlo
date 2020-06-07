@@ -29,7 +29,7 @@ namespace OOP_Kursach_Monte_Karlo
 
             for (uint i = 0; i < 5; i++)
             {
-                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.CalculateSquare((int)Math.Pow(10, 3 + i), out pointsInside, out time, out calculationError), pointsInside, time, calculationError + " %");
+                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.calculateSquareMC((int)Math.Pow(10, 3 + i), out pointsInside, out time, out calculationError), pointsInside, time, calculationError + " %");
             }
 
             dataGridView.Rows.Add();
