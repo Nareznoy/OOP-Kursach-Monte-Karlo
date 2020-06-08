@@ -1,4 +1,4 @@
-﻿namespace OOP_Kursach_Monte_Karlo
+﻿namespace KR_OOP_Monte_Karlo
 {
     class LinearFunction : BorderFunctions
     {
@@ -17,12 +17,12 @@
             _b = firstPoint.Y - _k * firstPoint.X;
         }
 
-        public override bool IsInside(double x, double y)
+        public override bool isInside(double x, double y)
         {
             return (y < (_k * x + _b)) ? true : false;
         }
 
-        public override double Square()
+        public override double square()
         {
             return (SecondPoint.X - FirstPoint.X) * (SecondPoint.Y - FirstPoint.Y) / 2;
         }

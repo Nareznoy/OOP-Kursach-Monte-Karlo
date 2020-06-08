@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace OOP_Kursach_Monte_Karlo
+namespace KR_OOP_Monte_Karlo
 {
     public partial class Form1 : Form
     {
@@ -13,9 +13,7 @@ namespace OOP_Kursach_Monte_Karlo
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            Point dPoint, ePoint, aPoint;
-
-            if (!initializePoints(out dPoint, out ePoint, out aPoint))
+            if (!initializePoints(out Point dPoint, out Point ePoint, out Point aPoint))
             {
                 return;
             }
@@ -101,7 +99,7 @@ namespace OOP_Kursach_Monte_Karlo
                 if ((ePoint.Y - aPoint.Y) != (dPoint.X - ePoint.X))
                 {
                     ifValidValues = false;
-                    errorString += "Радиус окружност по оси y должен быть равен радиусу по оси x;\n";
+                    errorString += "Радиус окружности по оси y должен быть равен радиусу по оси x;\n";
                 }
             }
 

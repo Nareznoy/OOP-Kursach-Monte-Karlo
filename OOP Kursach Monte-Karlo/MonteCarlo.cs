@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace OOP_Kursach_Monte_Karlo
+namespace KR_OOP_Monte_Karlo
 {
     class MonteCarlo
     {

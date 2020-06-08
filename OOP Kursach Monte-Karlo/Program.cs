@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace OOP_Kursach_Monte_Karlo
+namespace KR_OOP_Monte_Karlo
 {
     static class Program
     {

@@ -1,8 +1,8 @@
-﻿namespace OOP_Kursach_Monte_Karlo
+﻿namespace KR_OOP_Monte_Karlo
 {
     public abstract class BorderFunctions
     {
-        public abstract double Square();
-        public abstract bool IsInside(double x, double y);
+        public abstract double square();
+        public abstract bool isInside(double x, double y);
     }
 }

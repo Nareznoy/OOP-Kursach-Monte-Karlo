@@ -1,35 +1,21 @@
-﻿namespace OOP_Kursach_Monte_Karlo
+﻿namespace KR_OOP_Monte_Karlo
 {
     public class Point
     {
-        private double _x;
-        private double _y ;
-
-
-        public double X
-        {
-            get => _x;
-            set => _x = value;
-        }
-
-
-        public double Y
-        {
-            get => _y;
-            set => _y = value;
-        }
+        public double X { get; }
+        public double Y { get; }
 
 
         public Point(double newX, double newY)
         {
-            _x = newX;
-            _y = newY;
+            X = newX;
+            Y = newY;
         }
 
         public Point(Point previousPoint)
         {
-            _x = previousPoint._x;
-            _y = previousPoint._y;
+            X = previousPoint.X;
+            Y = previousPoint.Y;
         }
     }
 }

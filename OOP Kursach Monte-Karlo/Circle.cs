@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OOP_Kursach_Monte_Karlo
+namespace KR_OOP_Monte_Karlo
 {
     class Circle : BorderFunctions
     {
@@ -15,13 +15,13 @@ namespace OOP_Kursach_Monte_Karlo
         }
 
 
-        public override bool IsInside(double x, double y)
+        public override bool isInside(double x, double y)
         {
             return (((x - CenterPoint.X) * (x - CenterPoint.X) + (y - CenterPoint.Y) * (y - CenterPoint.Y)) <= Radius * Radius) ? true : false;
         }
 
 
-        public override double Square()
+        public override double square()
         {
             return Math.PI * Radius * Radius / 4;
         }

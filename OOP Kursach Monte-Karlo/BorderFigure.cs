@@ -1,4 +1,4 @@
-﻿namespace OOP_Kursach_Monte_Karlo
+﻿namespace KR_OOP_Monte_Karlo
 {
     class BorderFigure
     {
@@ -33,15 +33,15 @@
         public bool isInside(Point newPoint)
         {
             if (newPoint.X < _linearFunction.SecondPoint.X)
-                return _linearFunction.IsInside(newPoint.X, newPoint.Y);
+                return _linearFunction.isInside(newPoint.X, newPoint.Y);
             else
-                return _circle.IsInside(newPoint.X, newPoint.Y);
+                return _circle.isInside(newPoint.X, newPoint.Y);
         }
 
 
         public double actualSquare()
         {
-            return _circle.Square() + _linearFunction.Square();
+            return _circle.square() + _linearFunction.square();
         }
     }
 }
