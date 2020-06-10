@@ -12,7 +12,7 @@ namespace KR_OOP_Monte_Karlo
             _mainFigure = borderFigure;
         }
 
-        public double calculateSquareMC(int numberOfPoints, out int insidePointsCounter, out TimeSpan time, out double calculationError)
+        public double calculateSquareMC(int numberOfPoints, out int insidePointsCounter, out int timeMilliseconds, out double calculationError)
         {
             Stopwatch stopwatch = new Stopwatch();
             Random random = new Random();
@@ -38,7 +38,7 @@ namespace KR_OOP_Monte_Karlo
 
             calculationError = Math.Round((Math.Abs(square - _mainFigure.actualSquare()) / _mainFigure.actualSquare()) * 100, 2);
 
-            time = stopwatch.Elapsed;
+            timeMilliseconds = stopwatch.Elapsed.Milliseconds;
             
             return square;
         }

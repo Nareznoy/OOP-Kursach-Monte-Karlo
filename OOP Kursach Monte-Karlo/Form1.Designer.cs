@@ -35,15 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.testCaseRadioButton = new System.Windows.Forms.RadioButton();
+            this.manualInputRadioButton = new System.Windows.Forms.RadioButton();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Square = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberOfPointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.testCaseRadioButton = new System.Windows.Forms.RadioButton();
-            this.manualInputRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,36 +115,6 @@
             this.dataGridView.Size = new System.Drawing.Size(735, 206);
             this.dataGridView.TabIndex = 10;
             // 
-            // Type
-            // 
-            this.Type.HeaderText = "Кол-во точек";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            // 
-            // Square
-            // 
-            this.Square.HeaderText = "Площадь Монте-Карло";
-            this.Square.Name = "Square";
-            this.Square.ReadOnly = true;
-            // 
-            // numberOfPointsColumn
-            // 
-            this.numberOfPointsColumn.HeaderText = "Кол-во точек внутри фигуры";
-            this.numberOfPointsColumn.Name = "numberOfPointsColumn";
-            this.numberOfPointsColumn.ReadOnly = true;
-            // 
-            // timeColumn
-            // 
-            this.timeColumn.HeaderText = "Время";
-            this.timeColumn.Name = "timeColumn";
-            this.timeColumn.ReadOnly = true;
-            // 
-            // errorColumn
-            // 
-            this.errorColumn.HeaderText = "Погрешность, %";
-            this.errorColumn.Name = "errorColumn";
-            this.errorColumn.ReadOnly = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -198,6 +168,36 @@
             this.manualInputRadioButton.Text = "Ручной ввод";
             this.manualInputRadioButton.UseVisualStyleBackColor = true;
             // 
+            // Type
+            // 
+            this.Type.HeaderText = "Кол-во точек";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Square
+            // 
+            this.Square.HeaderText = "Площадь Монте-Карло";
+            this.Square.Name = "Square";
+            this.Square.ReadOnly = true;
+            // 
+            // numberOfPointsColumn
+            // 
+            this.numberOfPointsColumn.HeaderText = "Кол-во точек внутри фигуры";
+            this.numberOfPointsColumn.Name = "numberOfPointsColumn";
+            this.numberOfPointsColumn.ReadOnly = true;
+            // 
+            // timeColumn
+            // 
+            this.timeColumn.HeaderText = "Время, мс";
+            this.timeColumn.Name = "timeColumn";
+            this.timeColumn.ReadOnly = true;
+            // 
+            // errorColumn
+            // 
+            this.errorColumn.HeaderText = "Погрешность, %";
+            this.errorColumn.Name = "errorColumn";
+            this.errorColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,14 +228,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton testCaseRadioButton;
+        private System.Windows.Forms.RadioButton manualInputRadioButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Square;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberOfPointsColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorColumn;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton testCaseRadioButton;
-        private System.Windows.Forms.RadioButton manualInputRadioButton;
     }
 }
 
