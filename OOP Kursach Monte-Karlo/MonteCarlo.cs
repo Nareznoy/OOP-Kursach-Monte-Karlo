@@ -23,8 +23,8 @@ namespace KR_OOP_Monte_Karlo
 
             for (uint j = 0; j < numberOfPoints; j++)
             {
-                var randomX = _mainFigure.MinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.MaxX - _mainFigure.MinX);
-                var randomY = _mainFigure.MinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.MaxY - _mainFigure.MinY);
+                var randomX = _mainFigure.getMinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxX - _mainFigure.getMinX);
+                var randomY = _mainFigure.getMinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxY - _mainFigure.getMinY);
 
                 if (_mainFigure.isInside(new Point(randomX, randomY)) == true)
                 {

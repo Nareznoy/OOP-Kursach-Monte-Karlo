@@ -37,13 +37,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Square = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberOfPointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.testCaseRadioButton = new System.Windows.Forms.RadioButton();
+            this.manualInputRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,28 +135,6 @@
             this.dataGridView.Size = new System.Drawing.Size(735, 206);
             this.dataGridView.TabIndex = 10;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.aPoint_textBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.calculateButton, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.dPoint_textBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ePoint_textBox, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 52);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 114);
-            this.tableLayoutPanel1.TabIndex = 11;
-            // 
             // Type
             // 
             this.Type.HeaderText = "Кол-во точек";
@@ -185,6 +165,28 @@
             this.errorColumn.Name = "errorColumn";
             this.errorColumn.ReadOnly = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.aPoint_textBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.calculateButton, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dPoint_textBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ePoint_textBox, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(41, 37);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 114);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -195,11 +197,37 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // testCaseRadioButton
+            // 
+            this.testCaseRadioButton.AutoSize = true;
+            this.testCaseRadioButton.Location = new System.Drawing.Point(41, 159);
+            this.testCaseRadioButton.Name = "testCaseRadioButton";
+            this.testCaseRadioButton.Size = new System.Drawing.Size(129, 17);
+            this.testCaseRadioButton.TabIndex = 13;
+            this.testCaseRadioButton.TabStop = true;
+            this.testCaseRadioButton.Text = "Конрольный пример";
+            this.testCaseRadioButton.UseVisualStyleBackColor = true;
+            this.testCaseRadioButton.CheckedChanged += new System.EventHandler(this.testCaseRadioButton_CheckedChanged);
+            // 
+            // manualInputRadioButton
+            // 
+            this.manualInputRadioButton.AutoSize = true;
+            this.manualInputRadioButton.Checked = true;
+            this.manualInputRadioButton.Location = new System.Drawing.Point(41, 182);
+            this.manualInputRadioButton.Name = "manualInputRadioButton";
+            this.manualInputRadioButton.Size = new System.Drawing.Size(87, 17);
+            this.manualInputRadioButton.TabIndex = 14;
+            this.manualInputRadioButton.TabStop = true;
+            this.manualInputRadioButton.Text = "Ручной ввод";
+            this.manualInputRadioButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 451);
+            this.Controls.Add(this.manualInputRadioButton);
+            this.Controls.Add(this.testCaseRadioButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView);
@@ -210,6 +238,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -230,6 +259,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn timeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton testCaseRadioButton;
+        private System.Windows.Forms.RadioButton manualInputRadioButton;
     }
 }
 

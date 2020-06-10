@@ -13,12 +13,12 @@ namespace KR_OOP_Monte_Karlo
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            if (!initializePoints(out Point dPoint, out Point ePoint, out Point aPoint))
+            if (!initializePoints(out Point ePoint, out Point aPoint))
             {
                 return;
             }
 
-            BorderFigure figure = new BorderFigure(dPoint, ePoint, aPoint);
+            BorderFigure figure = new BorderFigure(ePoint, aPoint);
             MonteCarlo monteCarlo = new MonteCarlo(figure);
 
             TimeSpan time;
@@ -35,25 +35,12 @@ namespace KR_OOP_Monte_Karlo
         }
 
 
-        private bool initializePoints(out Point dPoint, out Point ePoint, out Point aPoint)
+        private bool initializePoints(out Point ePoint, out Point aPoint)
         {
             bool ifValidValues = true;
             string[] temp;
 
             string errorString = "";
-
-
-            try
-            {
-                temp = dPoint_textBox.Text.Split(new char[] { ' ', ',' });
-                dPoint = new Point(Convert.ToDouble(temp[0]), Convert.ToDouble(temp[1]));
-            }
-            catch
-            {
-                dPoint = null;
-                errorString += "Некорректное значение точки d;\n";
-                ifValidValues = false;
-            }
 
             try
             {
@@ -81,11 +68,6 @@ namespace KR_OOP_Monte_Karlo
 
             if (ifValidValues)
             {
-                if (aPoint.Y != dPoint.Y)
-                {
-                    ifValidValues = false;
-                    errorString += "Точки a и d должны находится на одном уровне по y;\n";
-                }
                 if (aPoint.Y >= ePoint.Y)
                 {
                     ifValidValues = false;
@@ -96,11 +78,6 @@ namespace KR_OOP_Monte_Karlo
                     ifValidValues = false;
                     errorString += "Точка a должна быть правее точки e по оси x;\n";
                 }
-                if ((ePoint.Y - aPoint.Y) != (dPoint.X - ePoint.X))
-                {
-                    ifValidValues = false;
-                    errorString += "Радиус окружности по оси y должен быть равен радиусу по оси x;\n";
-                }
             }
 
             if (!ifValidValues)
@@ -109,6 +86,30 @@ namespace KR_OOP_Monte_Karlo
             }
 
             return ifValidValues;
+        }
+
+        private void testCaseRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (testCaseRadioButton.Checked)
+            {
+                dPoint_textBox.Text = "20 0";
+                ePoint_textBox.Text = "10 10";
+                aPoint_textBox.Text = "0 0";
+
+                dPoint_textBox.Enabled = false;
+                ePoint_textBox.Enabled = false;
+                aPoint_textBox.Enabled = false;
+            }
+            else
+            {
+                dPoint_textBox.Clear();
+                ePoint_textBox.Clear();
+                aPoint_textBox.Clear();
+
+                dPoint_textBox.Enabled = true;
+                ePoint_textBox.Enabled = true;
+                aPoint_textBox.Enabled = true;
+            }
         }
     }
 }

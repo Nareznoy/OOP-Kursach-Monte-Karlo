@@ -5,28 +5,20 @@
         private readonly LinearFunction _linearFunction;
         private readonly Circle _circle;
 
-
-        public double MinX { get; }
-        public double MinY { get; }
-
-        public double MaxX { get; }
-        public double MaxY { get; }
-
         public double RectangleSquare { get; }
 
+        public double getMinX => _linearFunction.FirstPoint.X;
+        public double getMaxX => _circle.CenterPoint.X + _circle.Radius;
 
-        public BorderFigure(Point dPoint, Point ePoint, Point aPoint)
+        public double getMinY => _circle.CenterPoint.Y;
+        public double getMaxY => _circle.CenterPoint.Y + _circle.Radius;
+
+        public BorderFigure(Point ePoint, Point aPoint)
         {
-            MinX = aPoint.X;
-            MinY = aPoint.Y;
-
-            MaxX = dPoint.X;
-            MaxY = ePoint.Y;
-
             _linearFunction = new LinearFunction(aPoint, ePoint);
-            _circle = new Circle(new Point(ePoint.X, ePoint.Y - (ePoint.Y - dPoint.Y)), ePoint.Y - dPoint.Y);
+            _circle = new Circle(new Point(ePoint.X, ePoint.Y - (ePoint.Y - aPoint.Y)), ePoint.Y - aPoint.Y);
 
-            RectangleSquare = (MaxX - MinX) * (MaxY - MinY);
+            RectangleSquare = (ePoint.X + _circle.Radius - aPoint.X) * (ePoint.Y - aPoint.Y);
         }
 
 
