@@ -21,13 +21,9 @@ namespace KR_OOP_Monte_Karlo
             BorderFigure figure = new BorderFigure(ePoint, aPoint);
             MonteCarlo monteCarlo = new MonteCarlo(figure);
 
-            int timeMilliseconds;
-            double calculationError;
-            int pointsInside;
-
             for (uint i = 0; i < 5; i++)
             {
-                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.calculateSquareMC((int)Math.Pow(10, 3 + i), out pointsInside, out timeMilliseconds, out calculationError), pointsInside, timeMilliseconds, calculationError + " %");
+                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.calculateSquareMC((int)Math.Pow(10, 3 + i), out int pointsInside, out int timeMilliseconds, out double calculationError), pointsInside, timeMilliseconds, calculationError + " %");
             }
 
             dataGridView.Rows.Add();

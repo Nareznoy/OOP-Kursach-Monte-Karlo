@@ -35,15 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.testCaseRadioButton = new System.Windows.Forms.RadioButton();
-            this.manualInputRadioButton = new System.Windows.Forms.RadioButton();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Square = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberOfPointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.testCaseRadioButton = new System.Windows.Forms.RadioButton();
+            this.manualInputRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +54,7 @@
             this.calculateButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.calculateButton.Location = new System.Drawing.Point(69, 55);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(145, 30);
+            this.calculateButton.Size = new System.Drawing.Size(145, 27);
             this.calculateButton.TabIndex = 0;
             this.calculateButton.Text = "Вычислить";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -112,61 +112,8 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.Size = new System.Drawing.Size(735, 206);
+            this.dataGridView.Size = new System.Drawing.Size(735, 188);
             this.dataGridView.TabIndex = 10;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.aPoint_textBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.calculateButton, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ePoint_textBox, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(40, 43);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 88);
-            this.tableLayoutPanel1.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(288, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(459, 215);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // testCaseRadioButton
-            // 
-            this.testCaseRadioButton.AutoSize = true;
-            this.testCaseRadioButton.Location = new System.Drawing.Point(40, 137);
-            this.testCaseRadioButton.Name = "testCaseRadioButton";
-            this.testCaseRadioButton.Size = new System.Drawing.Size(129, 17);
-            this.testCaseRadioButton.TabIndex = 13;
-            this.testCaseRadioButton.Text = "Конрольный пример";
-            this.testCaseRadioButton.UseVisualStyleBackColor = true;
-            this.testCaseRadioButton.CheckedChanged += new System.EventHandler(this.testCaseRadioButton_CheckedChanged);
-            // 
-            // manualInputRadioButton
-            // 
-            this.manualInputRadioButton.AutoSize = true;
-            this.manualInputRadioButton.Checked = true;
-            this.manualInputRadioButton.Location = new System.Drawing.Point(40, 160);
-            this.manualInputRadioButton.Name = "manualInputRadioButton";
-            this.manualInputRadioButton.Size = new System.Drawing.Size(87, 17);
-            this.manualInputRadioButton.TabIndex = 14;
-            this.manualInputRadioButton.TabStop = true;
-            this.manualInputRadioButton.Text = "Ручной ввод";
-            this.manualInputRadioButton.UseVisualStyleBackColor = true;
             // 
             // Type
             // 
@@ -198,18 +145,71 @@
             this.errorColumn.Name = "errorColumn";
             this.errorColumn.ReadOnly = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.aPoint_textBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.calculateButton, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ePoint_textBox, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(41, 48);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 85);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(288, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(459, 215);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // testCaseRadioButton
+            // 
+            this.testCaseRadioButton.AutoSize = true;
+            this.testCaseRadioButton.Location = new System.Drawing.Point(41, 136);
+            this.testCaseRadioButton.Name = "testCaseRadioButton";
+            this.testCaseRadioButton.Size = new System.Drawing.Size(129, 17);
+            this.testCaseRadioButton.TabIndex = 13;
+            this.testCaseRadioButton.Text = "Конрольный пример";
+            this.testCaseRadioButton.UseVisualStyleBackColor = true;
+            this.testCaseRadioButton.CheckedChanged += new System.EventHandler(this.testCaseRadioButton_CheckedChanged);
+            // 
+            // manualInputRadioButton
+            // 
+            this.manualInputRadioButton.AutoSize = true;
+            this.manualInputRadioButton.Checked = true;
+            this.manualInputRadioButton.Location = new System.Drawing.Point(41, 159);
+            this.manualInputRadioButton.Name = "manualInputRadioButton";
+            this.manualInputRadioButton.Size = new System.Drawing.Size(87, 17);
+            this.manualInputRadioButton.TabIndex = 14;
+            this.manualInputRadioButton.TabStop = true;
+            this.manualInputRadioButton.Text = "Ручной ввод";
+            this.manualInputRadioButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 451);
+            this.ClientSize = new System.Drawing.Size(759, 433);
             this.Controls.Add(this.manualInputRadioButton);
             this.Controls.Add(this.testCaseRadioButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView);
             this.Name = "Form1";
-            this.Text = "Монте-Карло ООП";
+            this.Text = "КР ООП Монте-Карло Объектно-ориентированная реализация";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
