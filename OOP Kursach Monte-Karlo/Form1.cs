@@ -92,21 +92,17 @@ namespace KR_OOP_Monte_Karlo
         {
             if (testCaseRadioButton.Checked)
             {
-                dPoint_textBox.Text = "20 0";
                 ePoint_textBox.Text = "10 10";
                 aPoint_textBox.Text = "0 0";
 
-                dPoint_textBox.Enabled = false;
                 ePoint_textBox.Enabled = false;
                 aPoint_textBox.Enabled = false;
             }
             else
             {
-                dPoint_textBox.Clear();
                 ePoint_textBox.Clear();
                 aPoint_textBox.Clear();
 
-                dPoint_textBox.Enabled = true;
                 ePoint_textBox.Enabled = true;
                 aPoint_textBox.Enabled = true;
             }

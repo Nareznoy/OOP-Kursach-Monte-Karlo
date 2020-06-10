@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.calculateButton = new System.Windows.Forms.Button();
-            this.dPoint_textBox = new System.Windows.Forms.TextBox();
             this.ePoint_textBox = new System.Windows.Forms.TextBox();
             this.aPoint_textBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -54,7 +52,7 @@
             // calculateButton
             // 
             this.calculateButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.calculateButton.Location = new System.Drawing.Point(69, 81);
+            this.calculateButton.Location = new System.Drawing.Point(69, 55);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(145, 30);
             this.calculateButton.TabIndex = 0;
@@ -62,18 +60,10 @@
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
-            // dPoint_textBox
-            // 
-            this.dPoint_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dPoint_textBox.Location = new System.Drawing.Point(69, 3);
-            this.dPoint_textBox.Name = "dPoint_textBox";
-            this.dPoint_textBox.Size = new System.Drawing.Size(145, 20);
-            this.dPoint_textBox.TabIndex = 2;
-            // 
             // ePoint_textBox
             // 
             this.ePoint_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ePoint_textBox.Location = new System.Drawing.Point(69, 29);
+            this.ePoint_textBox.Location = new System.Drawing.Point(69, 3);
             this.ePoint_textBox.Name = "ePoint_textBox";
             this.ePoint_textBox.Size = new System.Drawing.Size(145, 20);
             this.ePoint_textBox.TabIndex = 3;
@@ -81,26 +71,16 @@
             // aPoint_textBox
             // 
             this.aPoint_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aPoint_textBox.Location = new System.Drawing.Point(69, 55);
+            this.aPoint_textBox.Location = new System.Drawing.Point(69, 29);
             this.aPoint_textBox.Name = "aPoint_textBox";
             this.aPoint_textBox.Size = new System.Drawing.Size(145, 20);
             this.aPoint_textBox.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Точка d";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(3, 26);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 6;
@@ -110,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 52);
+            this.label3.Location = new System.Drawing.Point(3, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 7;
@@ -170,21 +150,19 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.aPoint_textBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.calculateButton, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.dPoint_textBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ePoint_textBox, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(41, 37);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(40, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 114);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 88);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // pictureBox1
@@ -200,11 +178,10 @@
             // testCaseRadioButton
             // 
             this.testCaseRadioButton.AutoSize = true;
-            this.testCaseRadioButton.Location = new System.Drawing.Point(41, 159);
+            this.testCaseRadioButton.Location = new System.Drawing.Point(40, 137);
             this.testCaseRadioButton.Name = "testCaseRadioButton";
             this.testCaseRadioButton.Size = new System.Drawing.Size(129, 17);
             this.testCaseRadioButton.TabIndex = 13;
-            this.testCaseRadioButton.TabStop = true;
             this.testCaseRadioButton.Text = "Конрольный пример";
             this.testCaseRadioButton.UseVisualStyleBackColor = true;
             this.testCaseRadioButton.CheckedChanged += new System.EventHandler(this.testCaseRadioButton_CheckedChanged);
@@ -213,7 +190,7 @@
             // 
             this.manualInputRadioButton.AutoSize = true;
             this.manualInputRadioButton.Checked = true;
-            this.manualInputRadioButton.Location = new System.Drawing.Point(41, 182);
+            this.manualInputRadioButton.Location = new System.Drawing.Point(40, 160);
             this.manualInputRadioButton.Name = "manualInputRadioButton";
             this.manualInputRadioButton.Size = new System.Drawing.Size(87, 17);
             this.manualInputRadioButton.TabIndex = 14;
@@ -245,10 +222,8 @@
         #endregion
 
         private System.Windows.Forms.Button calculateButton;
-        private System.Windows.Forms.TextBox dPoint_textBox;
         private System.Windows.Forms.TextBox ePoint_textBox;
         private System.Windows.Forms.TextBox aPoint_textBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView;
