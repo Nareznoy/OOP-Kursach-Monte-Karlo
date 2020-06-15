@@ -33,10 +33,11 @@ namespace KR_OOP_Monte_Karlo
             }
 
             double square = Math.Round((_mainFigure.RectangleSquare * insidePointsCounter / numberOfPoints), 3);
+            double actualSquare = _mainFigure.actualSquare();
 
             stopwatch.Stop();
 
-            calculationError = Math.Round((Math.Abs(square - _mainFigure.actualSquare()) / _mainFigure.actualSquare()) * 100, 2);
+            calculationError = Math.Round((Math.Abs(square - actualSquare) / actualSquare) * 100, 2);
 
             timeMilliseconds = stopwatch.Elapsed.Milliseconds;
             

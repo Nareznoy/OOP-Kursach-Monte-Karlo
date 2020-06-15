@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KR_OOP_Monte_Karlo.LinearFunction">
-    <Position X="2.75" Y="3" Width="3.5" />
+    <Position X="2.5" Y="3" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAAAQABAAAAIAA=</HashCode>
       <FileName>LinearFunction.cs</FileName>
