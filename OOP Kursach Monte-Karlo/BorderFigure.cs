@@ -1,4 +1,6 @@
-﻿namespace KR_OOP_Monte_Karlo
+﻿using System.Windows.Forms;
+
+namespace KR_OOP_Monte_Karlo
 {
     class BorderFigure
     {
@@ -6,6 +8,7 @@
         private readonly Circle _circle;
 
         public double RectangleSquare { get; }
+        public double RealSquare { get; }
 
         public double getMinX => _linearFunction.FirstPoint.X;
         public double getMaxX => _circle.CenterPoint.X + _circle.Radius;
@@ -19,21 +22,16 @@
             _circle = new Circle(new Point(ePoint.X, ePoint.Y - (ePoint.Y - aPoint.Y)), ePoint.Y - aPoint.Y);
 
             RectangleSquare = (ePoint.X + _circle.Radius - aPoint.X) * (ePoint.Y - aPoint.Y);
+            RealSquare = _circle.square() + _linearFunction.square();
         }
 
 
-        public bool isInside(Point newPoint)
+        public bool isInside(double x, double y)
         {
-            if (newPoint.X < _linearFunction.SecondPoint.X)
-                return _linearFunction.isInside(newPoint.X, newPoint.Y);
+            if (x < _linearFunction.SecondPoint.X)
+                return _linearFunction.isInside(x, y);
             else
-                return _circle.isInside(newPoint.X, newPoint.Y);
-        }
-
-
-        public double actualSquare()
-        {
-            return _circle.square() + _linearFunction.square();
+                return _circle.isInside(x, y);
         }
     }
 }

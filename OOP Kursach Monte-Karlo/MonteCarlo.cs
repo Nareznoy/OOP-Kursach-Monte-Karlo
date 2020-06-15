@@ -26,18 +26,17 @@ namespace KR_OOP_Monte_Karlo
                 var randomX = _mainFigure.getMinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxX - _mainFigure.getMinX);
                 var randomY = _mainFigure.getMinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxY - _mainFigure.getMinY);
 
-                if (_mainFigure.isInside(new Point(randomX, randomY)) == true)
+                if (_mainFigure.isInside(randomX, randomY) == true)
                 {
                     insidePointsCounter++;
                 }
             }
 
             double square = Math.Round((_mainFigure.RectangleSquare * insidePointsCounter / numberOfPoints), 3);
-            double actualSquare = _mainFigure.actualSquare();
 
             stopwatch.Stop();
 
-            calculationError = Math.Round((Math.Abs(square - actualSquare) / actualSquare) * 100, 2);
+            calculationError = Math.Round((Math.Abs(square - _mainFigure.RealSquare) / _mainFigure.RealSquare) * 100, 2);
 
             timeMilliseconds = stopwatch.Elapsed.Milliseconds;
             
