@@ -12,19 +12,19 @@ namespace KR_OOP_Monte_Karlo
             _mainFigure = borderFigure;
         }
 
-        public double calculateSquareMC(int numberOfPoints, out int insidePointsCounter, out int timeMilliseconds, out double calculationError)
+        public double calculateSquareMC(int numberOfPoints, out int insidePointsCounter, out long timeMilliseconds, out double calculationError)
         {
             Stopwatch stopwatch = new Stopwatch();
             Random random = new Random();
 
             insidePointsCounter = 0;
 
-            stopwatch.Start();
+            stopwatch.Restart();
 
             for (uint j = 0; j < numberOfPoints; j++)
             {
-                var randomX = _mainFigure.getMinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxX - _mainFigure.getMinX);
-                var randomY = _mainFigure.getMinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxY - _mainFigure.getMinY);
+                double randomX = _mainFigure.getMinX + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxX - _mainFigure.getMinX);
+                double randomY = _mainFigure.getMinY + Convert.ToDouble(random.Next(0, 32767)) / 32767 * (_mainFigure.getMaxY - _mainFigure.getMinY);
 
                 if (_mainFigure.isInside(randomX, randomY) == true)
                 {
@@ -34,11 +34,11 @@ namespace KR_OOP_Monte_Karlo
 
             double square = Math.Round((_mainFigure.RectangleSquare * insidePointsCounter / numberOfPoints), 3);
 
-            stopwatch.Stop();
-
             calculationError = Math.Round((Math.Abs(square - _mainFigure.RealSquare) / _mainFigure.RealSquare) * 100, 2);
 
-            timeMilliseconds = stopwatch.Elapsed.Milliseconds;
+            stopwatch.Stop();
+
+            timeMilliseconds = stopwatch.ElapsedMilliseconds;
             
             return square;
         }

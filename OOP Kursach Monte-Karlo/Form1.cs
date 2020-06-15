@@ -23,7 +23,7 @@ namespace KR_OOP_Monte_Karlo
 
             for (uint i = 0; i < 5; i++)
             {
-                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.calculateSquareMC((int)Math.Pow(10, 3 + i), out int pointsInside, out int timeMilliseconds, out double calculationError), pointsInside, timeMilliseconds, calculationError);
+                dataGridView.Rows.Add("10^" + (3 + i), monteCarlo.calculateSquareMC((int)Math.Pow(10, 3 + i), out int pointsInside, out long timeMilliseconds, out double calculationError), pointsInside, timeMilliseconds, calculationError);
             }
 
             dataGridView.Rows.Add();
