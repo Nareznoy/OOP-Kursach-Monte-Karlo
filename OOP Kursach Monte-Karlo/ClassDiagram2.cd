@@ -1,52 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="KR_OOP_Monte_Karlo.BorderFigure">
-    <Position X="9.25" Y="0.5" Width="3" />
-    <TypeIdentifier>
-      <HashCode>MAAAAAAAAAAAAgAAQgAAAEAAAAAAAAAAEAAAMAAAAAA=</HashCode>
-      <FileName>BorderFigure.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KR_OOP_Monte_Karlo.BorderFunctions">
-    <Position X="5.75" Y="0.75" Width="2.5" />
+    <Position X="6.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>BorderFunctions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KR_OOP_Monte_Karlo.Circle">
-    <Position X="6.25" Y="3" Width="2.75" />
+    <Position X="8" Y="2.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAIAA=</HashCode>
       <FileName>Circle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KR_OOP_Monte_Karlo.Form1">
-    <Position X="12.5" Y="0.75" Width="4.75" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAQQSQAAFAAAACAgBAiAQAAAAAAAQAgAQBAACA=</HashCode>
-      <FileName>Form1.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KR_OOP_Monte_Karlo.LinearFunction">
-    <Position X="2.5" Y="3" Width="3.5" />
+    <Position X="3" Y="2.25" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAAAQABAAAAIAA=</HashCode>
       <FileName>LinearFunction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KR_OOP_Monte_Karlo.MonteCarlo">
-    <Position X="17.5" Y="0.75" Width="8" />
+    <Position X="11.25" Y="2.75" Width="8.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>MonteCarlo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KR_OOP_Monte_Karlo.Point">
-    <Position X="18" Y="4.5" Width="2.5" />
+    <Position X="11.75" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KR_OOP_Monte_Karlo.BorderFigure">
+    <Position X="11.5" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAAAAAAAAAAQgAAAEAAAAAAAAAAEAAAMCAAAAA=</HashCode>
+      <FileName>BorderFigure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

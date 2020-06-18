@@ -53,5 +53,4 @@ namespace KR_OOP_Monte_Karlo
             return square;
         }
     }
-    
 }

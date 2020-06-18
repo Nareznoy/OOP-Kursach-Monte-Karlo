@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace KR_OOP_Monte_Karlo
+﻿namespace KR_OOP_Monte_Karlo
 {
     class BorderFigure
     {
