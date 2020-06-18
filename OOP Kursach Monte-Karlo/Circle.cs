@@ -8,10 +8,21 @@ namespace KR_OOP_Monte_Karlo
         public double Radius { get; }
 
 
+        public Circle()
+        {
+            CenterPoint = new Point();
+        }
+
         public Circle(Point center, double newRadius)
         {
             CenterPoint = new Point(center);
             Radius = newRadius;
+        }
+
+        public Circle(Circle previousCircle)
+        {
+            CenterPoint = new Point(previousCircle.CenterPoint);
+            Radius = previousCircle.Radius;
         }
 
 

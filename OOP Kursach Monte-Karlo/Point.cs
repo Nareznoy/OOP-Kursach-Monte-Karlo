@@ -6,6 +6,12 @@
         public double Y { get; }
 
 
+        public Point()
+        {
+            X = 0;
+            Y = 0;
+        }
+
         public Point(double newX, double newY)
         {
             X = newX;

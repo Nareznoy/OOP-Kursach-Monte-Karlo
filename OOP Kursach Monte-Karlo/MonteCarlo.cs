@@ -7,9 +7,19 @@ namespace KR_OOP_Monte_Karlo
     {
         private readonly BorderFigure _mainFigure;
 
-        public MonteCarlo (BorderFigure borderFigure)
+        public MonteCarlo()
         {
-            _mainFigure = borderFigure;
+            _mainFigure = new BorderFigure();
+        }
+
+        public MonteCarlo(BorderFigure borderFigure)
+        {
+            _mainFigure = new BorderFigure(borderFigure);
+        }
+
+        public MonteCarlo(MonteCarlo previousMonteCarlo)
+        {
+            _mainFigure = new BorderFigure(previousMonteCarlo._mainFigure);
         }
 
         public double calculateSquareMC(int numberOfPoints, out int insidePointsCounter, out long timeMilliseconds, out double calculationError)

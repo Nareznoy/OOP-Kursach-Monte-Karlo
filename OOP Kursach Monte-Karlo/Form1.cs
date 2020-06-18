@@ -27,7 +27,7 @@ namespace KR_OOP_Monte_Karlo
             }
 
             dataGridView.Rows.Add();
-            dataGridView.Rows.Add("Площадь фигуры", figure.RealSquare);
+            dataGridView.Rows.Add("Площадь фигуры", Math.Round(figure.RealSquare, 4));
         }
 
 

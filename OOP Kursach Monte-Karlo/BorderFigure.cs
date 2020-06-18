@@ -16,6 +16,16 @@ namespace KR_OOP_Monte_Karlo
         public double getMinY => _circle.CenterPoint.Y;
         public double getMaxY => _circle.CenterPoint.Y + _circle.Radius;
 
+
+        public BorderFigure()
+        {
+            _linearFunction = new LinearFunction();
+            _circle = new Circle();
+
+            RectangleSquare = 0;
+            RealSquare = 0;
+        }
+
         public BorderFigure(Point ePoint, Point aPoint)
         {
             _linearFunction = new LinearFunction(aPoint, ePoint);
@@ -23,6 +33,15 @@ namespace KR_OOP_Monte_Karlo
 
             RectangleSquare = (ePoint.X + _circle.Radius - aPoint.X) * (ePoint.Y - aPoint.Y);
             RealSquare = _circle.square() + _linearFunction.square();
+        }
+
+        public BorderFigure(BorderFigure previousBorderFigure)
+        {
+            _linearFunction = new LinearFunction(previousBorderFigure._linearFunction);
+            _circle = new Circle(previousBorderFigure._circle);
+
+            RectangleSquare = previousBorderFigure.RectangleSquare;
+            RealSquare = previousBorderFigure.RealSquare;
         }
 
 
